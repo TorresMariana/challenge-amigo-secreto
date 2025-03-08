@@ -163,3 +163,9 @@ ul {
 
 
 
+@media screen and (max-width:950px){
+    .header-banner{
+        flex-direction: column;
+    }
+    
+}
