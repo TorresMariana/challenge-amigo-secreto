@@ -3,6 +3,7 @@
 
 //VARIABLES
 let amigos = [];
+let indiceMaximo = amigos.length;
 
 // Desarrolla una función, que permita al usuario ingresar un nombre en 
 // el campo de texto y añadirlo a la lista de amigos creada anteriormente.
@@ -20,10 +21,10 @@ function agregarAmigo(){
         amigos.push(nombre);
         // Limpiar el campo de entrada
         document.querySelector('#amigo').value = '';
+        actualizarListaDeAmigos();
     }
 
     console.log(amigos);
-    actualizarListaDeAmigos();
 }
 
 function limpiarEntrada(){
@@ -61,10 +62,36 @@ function actualizarListaDeAmigos(){
     }
 }
 
-// function obtenerNombres(){
-//     let elementoDeLista = document.createElement("li");
-//     for(let i=0; i<amigos.length; i++){
-//         elementoDeLista.innerHTML = amigos[i];
-//         console.log(elementoDeLista);
-//     }
-// }
+
+
+// Escribe una función que seleccione de manera aleatoria uno de los nombres 
+// almacenados en el array amigos. Usa Math.random() y Math.floor() para 
+// obtener un índice aleatorio.
+function sortearAmigo(){
+    // Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder 
+    // al nombre correspondiente en el arreglo.
+    let nombreSorteado = amigos[generarIndiceAleatorio()];
+    console.log(nombreSorteado);
+
+    // Mostrar el resultado: Actualizar el contenido del elemento de resultado 
+    // utilizando document.getElementById()  e innerHTML para mostrar el 
+    // amigo sorteado.
+    document.getElementById('resultado').innerHTML = nombreSorteado;
+}
+
+
+function generarIndiceAleatorio(){
+    // Generar un índice aleatorio: Usar Math.random() y Math.floor() 
+    // para seleccionar un índice aleatorio del arreglo.
+    let indiceAlteatorio = Math.floor(Math.random()*indiceMaximo);
+    console.log(indiceAlteatorio);
+
+    // Validar que haya amigos disponibles: Antes de sortear, comprobar si el 
+    // array amigos no está vacío.
+    if (amigos.length > 0){
+        return indiceAlteatorio;
+    }
+    else{
+        alert('No hay amigos disponibles para sortear');
+    }
+}
