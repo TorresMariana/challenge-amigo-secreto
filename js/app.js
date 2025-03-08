@@ -28,7 +28,6 @@ function validarEntrada(nombreIngresado){
         alert('Ese amigo ya se encuentra en la lista.');
         return false;
     }else{
-        console.log(nombreIngresado);
         // Actualizar el array de amigos
         amigos.push(nombreIngresado);
         indiceMaximo++;
@@ -70,16 +69,13 @@ function sortearAmigo(){
     else {
         // Obtener el nombre sorteado
         let nombreSorteado = amigos[generarIndiceAleatorio()];
-        console.log(nombreSorteado);
         return document.getElementById('resultado').innerHTML = nombreSorteado;
     }
 }
 
 function generarIndiceAleatorio(){
     // Generar un índice aleatorio
-    console.log('maximo:', indiceMaximo);
     let indiceAlteatorio = Math.floor(Math.random()*indiceMaximo);
-    console.log('indice aleatorio:',indiceAlteatorio);
 
     // Validar que haya amigos disponibles
     if(listaNombresSorteados.length == indiceMaximo){
