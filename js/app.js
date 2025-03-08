@@ -16,13 +16,16 @@ function agregarAmigo(){
     if(validarEntrada(nombre)){
         actualizarListaDeAmigos();
         condicionesInciales();
-        return true;
+        return;
     }
 }
 
 function validarEntrada(nombreIngresado){
     if(nombreIngresado == ''){
         alert('Por favor, inserte un nombre.');
+        return false;
+    }else if(amigos.includes(nombreIngresado)){
+        alert('Ese amigo ya se encuentra en la lista.');
         return false;
     }else{
         console.log(nombreIngresado);
@@ -34,8 +37,7 @@ function validarEntrada(nombreIngresado){
 }
 
 // Crea una función que recorra el array amigos y agregue cada nombre como 
-// un elemento <li> dentro de una lista HTML. Usa innerHTML para limpiar la 
-// lista antes de agregar nuevos elementos.
+// un elemento <li> dentro de una lista HTML.
 function actualizarListaDeAmigos(){
     // Obtener el elemento de la lista
     let lista = document.getElementById('listaAmigos');
