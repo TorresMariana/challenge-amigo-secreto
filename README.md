@@ -2,8 +2,10 @@
 
 Primer Challenge  del programa ONE - Alura LATAM
 
+<br>
 
-<h3>Descripción del challenge</h3>
+
+<h3>✒Descripción del challenge</h3>
 
 El desafió consistia en el desarrollo de una aplicación que permita a los usuarios ingresar nombres de amigos en una lista para luego realizar un sorteo aleatorio y determinar quién es el "amigo secreto".
 
